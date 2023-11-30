@@ -58,7 +58,7 @@ class ArrowMenu
         Console.WriteLine($"Открываем файл: {file.FullName}");
         try
         {
-            Process.Start("explorer.exe", file.FullName);
+            Process.Start(new ProcessStartInfo { FileName = file.FullName, UseShellExecute = true });
         }
         catch (Exception ex)
         {
